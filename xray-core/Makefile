@@ -70,13 +70,13 @@ define Package/xray-core/install
 	$(INSTALL_DIR) $(1)/usr/bin/
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/main $(1)/usr/bin/xray
 
-	$(INSTALL_DIR) $(1)/etc/xray/
-	$(INSTALL_DATA) $(CURDIR)/files/config.json.example $(1)/etc/xray/
+	#$(INSTALL_DIR) $(1)/etc/xray/
+	#$(INSTALL_DATA) $(CURDIR)/files/config.json.example $(1)/etc/xray/
 
-	$(INSTALL_DIR) $(1)/etc/config/
-	$(INSTALL_CONF) $(CURDIR)/files/xray.conf $(1)/etc/config/xray
-	$(INSTALL_DIR) $(1)/etc/init.d/
-	$(INSTALL_BIN) $(CURDIR)/files/xray.init $(1)/etc/init.d/xray
+	#$(INSTALL_DIR) $(1)/etc/config/
+	#$(INSTALL_CONF) $(CURDIR)/files/xray.conf $(1)/etc/config/xray
+	#$(INSTALL_DIR) $(1)/etc/init.d/
+	#$(INSTALL_BIN) $(CURDIR)/files/xray.init $(1)/etc/init.d/xray
 endef
 
 define Package/xray-example/install
