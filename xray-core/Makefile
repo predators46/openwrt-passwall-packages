@@ -60,10 +60,10 @@ define Package/xray-example/description
   This includes example configuration files for xray-core.
 endef
 
-define Package/xray-core/conffiles
-/etc/xray/
-/etc/config/xray
-endef
+#define Package/xray-core/conffiles
+#/etc/xray/
+#/etc/config/xray
+#endef
 
 define Package/xray-core/install
 	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
