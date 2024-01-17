@@ -77,10 +77,10 @@ define Package/v2ray-extra/description
   This includes extra resources for v2ray-core.
 endef
 
-define Package/v2ray-core/conffiles
-/etc/config/v2ray
-/etc/v2ray/
-endef
+#define Package/v2ray-core/conffiles
+#/etc/config/v2ray
+#/etc/v2ray/
+#endef
 
 define Package/v2ray-core/install
 	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
