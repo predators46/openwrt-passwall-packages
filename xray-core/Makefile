@@ -47,11 +47,6 @@ define Package/xray-core/description
   $(call Package/xray/description)
 endef
 
-define Package/xray-core/conffiles
-/etc/xray/
-/etc/config/xray
-endef
-
 define Package/xray-core/install
 	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
 	$(INSTALL_DIR) $(1)/usr/bin/
