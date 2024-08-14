@@ -132,9 +132,6 @@ GO_PKG_TAGS:=$(subst $(space),$(comma),$(strip \
 	$(if $(CONFIG_SING_BOX_WITH_WIREGUARD),with_wireguard) \
 ))
 
-define Package/$(PKG_NAME)/conffiles
-endef
-
 define Package/$(PKG_NAME)/install
 	$(call GoPackage/Package/Install/Bin,$(1))
 endef
