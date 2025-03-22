@@ -23,7 +23,7 @@ GO_PKG_BUILD_PKG:=$(GO_PKG)
 GO_PKG_LDFLAGS:=-s -w
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/passwall-packages/golang/golang-package.mk
+include $(TOPDIR)/feeds/passwall_packages/golang/golang-package.mk
 
 define Package/geoview
   TITLE:=A geofile toolkit
