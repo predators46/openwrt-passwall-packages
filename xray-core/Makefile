@@ -24,7 +24,7 @@ GO_PKG_LDFLAGS_X:= \
 	$(GO_PKG)/core.version=$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
+include $(TOPDIR)/feeds/passwall-packages/golang/golang-package.mk
 
 define Package/xray/template
   TITLE:=A platform for building proxies to bypass network restrictions
@@ -45,11 +45,6 @@ endef
 
 define Package/xray-core/description
   $(call Package/xray/description)
-endef
-
-define Package/xray-core/conffiles
-/etc/xray/
-/etc/config/xray
 endef
 
 define Package/xray-core/install
