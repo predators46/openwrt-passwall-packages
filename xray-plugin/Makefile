@@ -24,7 +24,7 @@ PKG_BUILD_FLAGS:=no-mips16
 GO_PKG:=github.com/teddysun/xray-plugin
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/passwall-packages/golang/golang-package.mk
+include $(TOPDIR)/feeds/passwall_packages/golang/golang-package.mk
 
 define Package/xray-plugin
   SECTION:=net
