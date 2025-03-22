@@ -26,7 +26,7 @@ GO_PKG:=github.com/teddysun/v2ray-plugin
 GO_PKG_LDFLAGS_X:=main.VERSION=v$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
+include $(TOPDIR)/feeds/passwall-packages/golang/golang-package.mk
 
 define Package/v2ray-plugin
   SECTION:=net
