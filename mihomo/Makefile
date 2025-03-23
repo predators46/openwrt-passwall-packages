@@ -5,11 +5,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mihomo
-PKG_VERSION:=stable
+PKG_VERSION:=1.19.3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/MetaCubeX/mihomo/tar.gz/v$(PKG_VERSION)?
+PKG_SOURCE_URL:=https://github.com/MetaCubeX/mihomo/archive/v$(PKG_VERSION)
 PKG_HASH:=skip
 
 PKG_LICENSE:=GPL-3.0-only
@@ -28,7 +28,7 @@ GO_PKG_LDFLAGS_X:= \
 GO_PKG_TAGS:=with_gvisor
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
+include $(TOPDIR)/feeds/passwall_packages/golang/golang-package.mk
 
 define Package/mihomo
   SECTION:=net
@@ -36,7 +36,7 @@ define Package/mihomo
   SUBMENU:=Web Servers/Proxies
   TITLE:=A rule-based tunnel in Go
   URL:=https://github.com/MetaCubeX/mihomo
-  DEPENDS:=$(GO_ARCH_DEPENDS) +ca-bundle +kmod-tun +kmod-inet-diag +kmod-netlink-diag
+  DEPENDS:=$(GO_ARCH_DEPENDS) +ca-bundle +kmod-tun
 endef
 
 define Package/mihomo/description
@@ -50,22 +50,10 @@ define Package/mihomo/description
   Internet experience.
 endef
 
-define Package/mihomo/conffiles
-/etc/mihomo/config.yaml
-/etc/config/mihomo
-endef
-
 define Package/mihomo/install
 	$(call GoPackage/Package/Install/Bin,$(1))
-
-	$(INSTALL_DIR) $(1)/etc/mihomo/
-	$(INSTALL_CONF) $(PKG_BUILD_DIR)/docs/config.yaml $(1)/etc/mihomo/example.yaml
-
-	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) $(CURDIR)/files/mihomo.config $(1)/etc/config/mihomo
-
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) $(CURDIR)/files/mihomo.init $(1)/etc/init.d/mihomo
+	$(INSTALL_DIR) $(1)/etc/openclash/core
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/mihomo $(1)/etc/openclash/core/clash_meta
 endef
 
 $(eval $(call GoBinPackage,mihomo))
