@@ -1,0 +1,21 @@
+From 7bdc268bfe3e88675a32ce909299c2b43ecb4d01 Mon Sep 17 00:00:00 2001
+From: esaaprillia <esaapriliasalsabila@gmail.com>
+Date: Sun, 23 Mar 2025 18:48:53 +0800
+Subject: [PATCH] Update go.mod
+
+---
+ go.mod | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/go.mod b/go.mod
+index 9405a2f..1d021e3 100644
+--- a/go.mod
++++ b/go.mod
+@@ -1,6 +1,6 @@
+ module github.com/metacubex/mihomo
+ 
+-go 1.20
++go 1.24
+ 
+ require (
+ 	github.com/3andne/restls-client-go v0.1.6
