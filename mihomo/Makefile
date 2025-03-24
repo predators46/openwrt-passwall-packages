@@ -51,10 +51,9 @@ define Package/mihomo/description
 endef
 
 define Package/mihomo/install
-	$(call GoPackage/Package/Install/Bin,$(1))
-	#$(INSTALL_DIR) $(1)/etc/openclash/core
-	#$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/mihomo $(1)/etc/openclash/core/clash_meta
+	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
+	$(INSTALL_DIR) $(1)/etc/openclash/core
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/mihomo $(1)/etc/openclash/core/clash_meta
 endef
 
-$(eval $(call GoBinPackage,mihomo))
 $(eval $(call BuildPackage,mihomo))
